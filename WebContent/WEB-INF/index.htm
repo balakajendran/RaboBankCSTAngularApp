@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="ctsApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>RaboBank Customer Transaction Failure Details</title>
+
+<script
+  src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+</script>
+<script
+  src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-resource.min.js">
+</script>
+<script th:src="/resource/ctsCtrl.js"></script>
+</head>
+<body ng-controller="ctsCtrl">
+<table ng-table="tableParams">
+    <tr ng-repeat="row in $data track by row.id">
+        <td data-title="'Reference'" sortable="'referenceId'">{{row.referenceId}}</td>
+        <td data-title="'Account Number'" sortable="'accountNo'">{{row.account.accountNo}}</td>
+       	<td data-title="'Description'" sortable="'description'">{{row.description}}</td>
+       	<td data-title="'Start Balance'" sortable="'startBalance'">{{row.startBalance}}</td>
+       	<td data-title="'Mutation'" sortable="'mutation'">{{row.mutation}}</td>
+       	<td data-title="'End Balance'" sortable="'endBalance'">{{row.endBalance}}</td>
+       	<td data-title="'Error Detail'" sortable="'errorDetails'">{{row.errorDetails}}</td>
+    </tr>
+</table>
+</div>
+</body>
+</html>
